@@ -1,0 +1,28 @@
+
+<div class="container">
+<div class="jumbotron" *ngIf="appState == 'default'">
+  <h3> Add New Task </h3>
+<form (submit)="addToDo()">
+  <input type="text" [(ngModel)]="text" name="test" />
+  <button class="btn-success" type="submit">Add</button>
+</form>
+</div>
+
+<div class="jumbotron" *ngIf="appState == 'edit'">
+  <h3> Edit ToDo List </h3>
+  <form (submit)="updateTodo()" >
+  <input type="text" [(ngModel)]="text" name="edittest"/>
+  <button type="submit">Update</button>
+
+</form>
+</div>
+
+<div class="jumbotron" >
+<h3>Current Tasks </h3>
+<ul>
+  <li *ngFor="let todo of todo">
+    {{todo.text}} <button class="btn-danger" (click)="deleteToDo(todo.text)"> Delete </button> <button class="btn-warning" (click)="editToDo(todo)"> Edit </button>
+  </li>
+</ul>
+</div>
+</div>
