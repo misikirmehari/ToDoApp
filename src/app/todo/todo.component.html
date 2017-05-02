@@ -1,4 +1,3 @@
-
 <div class="container">
 <div class="jumbotron" *ngIf="appState == 'default'">
   <h3> Add New Task </h3>
@@ -12,7 +11,7 @@
   <h3> Edit ToDo List </h3>
   <form (submit)="updateTodo()" >
   <input type="text" [(ngModel)]="text" name="edittest"/>
-  <button type="submit">Update</button>
+  <button class="btn-primary" type="submit">Update</button>
 
 </form>
 </div>
